@@ -19,7 +19,9 @@ export default async function Todos() {
       name: name
     })
 
-    revalidatePath('/');
+    // revalidatePath('/todos', 'page')
+    revalidatePath('/', 'layout')
+
   };
 
   const deletePostForm = async (id: string) => {
@@ -27,7 +29,9 @@ export default async function Todos() {
 
     await deleteTodo(id)
 
-    revalidatePath('/');
+    // revalidatePath('/todos', 'page')
+    revalidatePath('/', 'layout')
+
   };
 
   return (

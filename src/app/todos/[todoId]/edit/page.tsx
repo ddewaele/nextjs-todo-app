@@ -11,9 +11,6 @@ export default async function EditTodo({ params }: {
 
   const todo = await fetchTodo(params.todoId)
 
-  console.log("Found todo ", todo)
-
-
   const updateTodoForm = async (formData: FormData) => {
     'use server';
 
@@ -25,7 +22,13 @@ export default async function EditTodo({ params }: {
         id,
         name
     })
-    revalidatePath('/');
+    // revalidatePath('/todos/[todoId]', 'page')
+    // revalidatePath('/todos/[todoId]/edit', 'page')
+    // revalidatePath('/todos', 'page')
+
+    revalidatePath('/', 'layout')
+
+
     redirect('/todos');
   };
 
