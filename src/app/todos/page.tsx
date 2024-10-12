@@ -2,6 +2,8 @@ import { revalidatePath } from "next/cache";
 import Link from "next/link";
 import { createTodo, deleteTodo, fetchTodos, Todo } from "../api/api";
 
+export const dynamic = 'force-dynamic'
+
 export default async function Todos() {
 
 
