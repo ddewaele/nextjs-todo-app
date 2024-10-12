@@ -1,3 +1,4 @@
+import { fetchTodo } from "@/app/api/api"
 import Link from "next/link"
 
 export default async function TodoDetails({ params }: {
@@ -6,14 +7,27 @@ export default async function TodoDetails({ params }: {
     }
 }) {
 
-    return (
-        <div>
-          <h1>Details</h1>
-          Details for todo {params.todoId}
-          <p>
-            <Link  href="/todos">Back</Link>
-          </p>
+  const todo = await fetchTodo(params.todoId)
 
-        </div>
+
+  if (!todo) {
+    return (<div>
+      Not Found
+    </div>
     )
+  }
+
+  return (
+    <div>
+    <h2>{todo.name}</h2>
+    Id = {todo.id}
+    <hr/>
+    Name = {todo.name}
+    <hr/>
+
+    <Link  href="/todos">Back</Link>
+    </div>
+  )
+
+
 }
