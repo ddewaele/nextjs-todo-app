@@ -1,4 +1,4 @@
-import { fetchTodo } from "@/app/api/api"
+import { fetchTodo } from "@/app/api/postgres"
 import Link from "next/link"
 
 export const dynamic = 'force-dynamic'

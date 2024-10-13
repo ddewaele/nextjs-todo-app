@@ -20,14 +20,26 @@ pnpm dev
 bun dev
 ```
 
-## API
+## Backend
+
+### API REST backend
 
 The API for this project is created with https://mockapi.io/
+
+### Postgres
+
+Link your project to vercel, create a postgres database with the following table
+
+```
+CREATE TABLE todos (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL
+);
+```
 
 ## CRUD operations
 
 This app uses server components and server actions to perform CRUD operations on todo entities
-
 
 ## Deploy on Vercel
 

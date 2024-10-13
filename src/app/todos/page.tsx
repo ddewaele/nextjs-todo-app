@@ -1,6 +1,7 @@
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
-import { createTodo, deleteTodo, fetchTodos, Todo } from "../api/api";
+import { createTodo, deleteTodo, fetchTodos } from "../api/postgres";
+import { Todo } from "../api/types";
 
 export const dynamic = 'force-dynamic'
 
@@ -14,7 +15,7 @@ export default async function Todos() {
 
     const name = formData.get('name') as string;
 
-    await createTodo({name})
+    await createTodo(name)
     revalidatePath('/', 'layout')
 
   };

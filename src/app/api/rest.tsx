@@ -1,10 +1,8 @@
+import { Todo } from "./types";
+
 // const BASE_URL = "https://ca62e833d0979b7651c8.free.beeceptor.com/api"
 const BASE_URL = "https://66f91bb72a683ce97310e9cf.mockapi.io/"
 
-export type Todo = {
-    id: string;
-    name: string;
-};
 
 export async function fetchTodos(): Promise<Todo[]> {
     const url = `${BASE_URL}/todos/`;

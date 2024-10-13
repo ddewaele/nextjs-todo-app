@@ -1,4 +1,4 @@
-import { fetchTodo, updateTodo } from "@/app/api/api";
+import { fetchTodo, updateTodo } from "@/app/api/postgres";
 import { revalidatePath } from "next/cache";
 import { notFound, redirect } from 'next/navigation';
 
