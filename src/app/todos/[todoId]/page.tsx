@@ -21,7 +21,7 @@ export default async function TodoDetails({ params }: {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Edit Todo</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">View Todo</h2>
 
       <form className="space-y-4">
         {/* ID Field (Read-only) */}
@@ -41,18 +41,12 @@ export default async function TodoDetails({ params }: {
           <input
             type="text"
             name="name"
-            defaultValue={todo.name}
-            className="w-full border border-gray-300 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={todo.name}
+            readOnly
+            className="w-full border border-gray-300 p-2 rounded-lg bg-gray-100 text-gray-500"
           />
         </div>
 
-        {/* Submit Button */}
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors"
-        >
-          Update Todo
-        </button>
       </form>
 
       {/* Back Link */}

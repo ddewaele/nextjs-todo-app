@@ -24,6 +24,8 @@ export async function fetchTodo(id: string): Promise<Todo | null> {
   }
 
 export async function updateTodo(id: string, todo: Todo): Promise<Todo> {
+
+    console.log("Updating todo ", todo)
     const { rows } = await sql<Todo>`
       UPDATE TODOs
       SET name = ${todo.name}
